@@ -27,7 +27,7 @@ export interface ListDataProps {
   author: string;
   title: string;
   category: string;
-  date: number;
+  date: string;
   edit: IconType;
   delete: IconType;
 }

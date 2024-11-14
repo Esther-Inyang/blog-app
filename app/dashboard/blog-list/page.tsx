@@ -4,8 +4,8 @@ import { FaRegEdit } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
 import { ListDataProps } from "@/app/types";
 
-const BlogList: React.FC<ListDataProps> = () => {
-  const listData = [
+const BlogList: React.FC = () => {
+  const listData: ListDataProps[] = [
     {
       id: 1,
       img: user1,
@@ -13,8 +13,8 @@ const BlogList: React.FC<ListDataProps> = () => {
       title: "Blog title posted earlier",
       category: "Politics",
       date: "2022-01-01",
-      edit: <FaRegEdit className="font-bold text-purple-700" />,
-      delete: <MdDeleteForever className="text-pink-600" />,
+      edit: FaRegEdit,
+      delete: MdDeleteForever,
     },
     {
       id: 2,
@@ -23,8 +23,8 @@ const BlogList: React.FC<ListDataProps> = () => {
       title: "Blog title posted earlier",
       category: "programming",
       date: "2024-11-01",
-      edit: <FaRegEdit className="font-bold text-purple-700" />,
-      delete: <MdDeleteForever className="text-pink-600" />,
+      edit: FaRegEdit,
+      delete: MdDeleteForever,
     },
     {
       id: 3,
@@ -33,8 +33,8 @@ const BlogList: React.FC<ListDataProps> = () => {
       title: "Blog title posted earlier",
       category: "Medicine",
       date: "2023-10-17",
-      edit: <FaRegEdit className="font-bold text-purple-700" />,
-      delete: <MdDeleteForever className="text-pink-600" />,
+      edit: FaRegEdit,
+      delete: MdDeleteForever,
     },
   ];
   return (
@@ -99,10 +99,14 @@ const BlogList: React.FC<ListDataProps> = () => {
                   </h2>
                 </td>
                 <td className="p-2 text-center">
-                  <button>{item.edit}</button>
+                  <button>
+                    <item.edit className="font-bold text-purple-700" />
+                  </button>
                 </td>
                 <td className="p-2 text-center">
-                  <button>{item.delete}</button>
+                  <button>
+                    <item.delete className="text-pink-600" />
+                  </button>
                 </td>
               </tr>
             );
